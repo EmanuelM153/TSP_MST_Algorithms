@@ -1,10 +1,9 @@
-const TSP = require("./TSP")
-const ArbolBinario = require("./ArbolBinario")
-const Nodo = require("./Nodo")
-const RutaOperaciones = require("./RutaOperaciones")
-const matprint = require("./matprint")
+import { TSP } from "../modelo/TSP"
+import { ArbolBinario } from "../modelo/ArbolBinario"
+import { Nodo } from "../modelo/Nodo"
+import { RutaOperaciones } from "../modelo/RutaOperaciones"
 
-class Main {
+export class MainTSP {
   static encontrarRutaOptima(matrizAdyacencia) {
     const n = matrizAdyacencia.length
     const arbol = new ArbolBinario(new Nodo(0, [], []))
@@ -46,5 +45,3 @@ class Main {
     return [RutaOperaciones.ordenarConexiones(rutaOptima), arbol]
   }
 }
-
-module.exports = Main

@@ -1,4 +1,4 @@
-const MatrizOperaciones = require("./MatrizOperaciones")
+import { MatrizOperaciones } from "./MatrizOperaciones"
 
 var matriz = [
   [1, 2, 5, 3, 0],

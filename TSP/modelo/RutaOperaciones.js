@@ -1,4 +1,4 @@
-class RutaOperaciones {
+export class RutaOperaciones {
   static ordenarConexiones(pares) {
     const indiceInicio = this.indiceNodoInicio(pares)
     const paresNuevos = [pares[indiceInicio]]
@@ -95,25 +95,6 @@ class RutaOperaciones {
     return haySubrutas
   }
 
-  // static revisarConexion(pares, inicio = 0) {
-  //   let conexion = false
-  //   if (pares.length >= 2) {
-  //     conexion = true
-
-  //     for (let i = inicio + 1; i < pares.length && conexion; i++) {
-  //       const parAnterior = pares[i - 1]
-  //       const par = pares[i]
-  //       conexion = parAnterior[1] === par[0]
-  //     }
-
-  //     const parUltimo = pares[pares.length - 1]
-  //     const parInicial = pares[inicio]
-  //     conexion &&= parInicial[0] === parUltimo[1]
-  //   }
-
-  //   return conexion
-  // }
-
   static obtenerCaminosSubRuta(pares, caminos) {
     const caminosSubRuta = []
 
@@ -125,5 +106,3 @@ class RutaOperaciones {
     return caminosSubRuta
   }
 }
-
-module.exports = RutaOperaciones

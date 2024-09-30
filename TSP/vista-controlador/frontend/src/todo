@@ -1,7 +1,6 @@
 - make the popUp wrap around when the position is greater than the pixel size of the screen
 - check deletion button after deleting one node, that crashes editing
 - add a confirmation before changing pages, so that the network is not erased
-- fix edge labels appearing in the wrong position
 - fix repeated name message appearing twice
 - fix erasure of nodes not releasing the name
 - edit edge values instead of their connections

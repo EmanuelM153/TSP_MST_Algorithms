@@ -1,6 +1,6 @@
-const MatrizOperaciones = require("./MatrizOperaciones")
+import { MatrizOperaciones } from "./MatrizOperaciones"
 
-function reducirMatriz(matriz) {
+export function reducirMatriz(matriz) {
   let reduccion = 0
 
   matriz.forEach((_, i) => {
@@ -21,5 +21,3 @@ function reducirMatriz(matriz) {
 
   return [reduccion, matriz]
 }
-
-module.exports = reducirMatriz

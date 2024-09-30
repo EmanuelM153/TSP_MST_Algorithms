@@ -1,7 +1,7 @@
-const ArbolBinario = require("./ArbolBinario")
-const Nodo = require("./Nodo")
+import { ArbolBinario } from "./ArbolBinario"
+import { Nodo } from "./Nodo"
 
-arbol = new ArbolBinario()
+const arbol = new ArbolBinario()
 
 test("Agregar un nodo a la derecha en el nodo raiz funciona", () => {
   arbol.agregarNodoDerecha(0, new Nodo())

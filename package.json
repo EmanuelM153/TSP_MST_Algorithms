@@ -2,6 +2,7 @@
   "name": "tsp",
   "version": "1.0.0",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
@@ -9,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "vista": "file:./TSP/vista/frontend",
     "jest": "^29.7.0"
   }
 }

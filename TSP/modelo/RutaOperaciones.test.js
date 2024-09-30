@@ -1,4 +1,4 @@
-const RutaOperaciones = require("./RutaOperaciones")
+import { RutaOperaciones } from "./RutaOperaciones"
 
 const ruta = [[3, 4]]
 

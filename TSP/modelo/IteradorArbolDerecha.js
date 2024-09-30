@@ -1,4 +1,4 @@
-class IteradorArbolDerecha {
+export class IteradorArbolDerecha {
   #arbol = undefined
   #posicion = 0
 
@@ -30,5 +30,3 @@ class IteradorArbolDerecha {
     this.#posicion = posicion
   }
 }
-
-module.exports = IteradorArbolDerecha

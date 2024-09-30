@@ -1,4 +1,4 @@
-class MatrizOperaciones {
+export class MatrizOperaciones {
   static #verificarPosicion(matriz) {
     return (i) => {
       if (i < 0 || i >= matriz.length) throw "Fila Inexistente"
@@ -64,5 +64,3 @@ class MatrizOperaciones {
     return matrizNueva
   }
 }
-
-module.exports = MatrizOperaciones

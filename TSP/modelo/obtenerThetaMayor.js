@@ -1,6 +1,6 @@
-const MatrizOperaciones = require("./MatrizOperaciones")
+import { MatrizOperaciones } from "./MatrizOperaciones";
 
-function obtenerThetaMayor(matriz) {
+export function obtenerThetaMayor(matriz) {
   let k, l
   let thetaMayor = 0
 
@@ -25,6 +25,3 @@ function obtenerTheta(matriz, i, j) {
   const matrizNueva = MatrizOperaciones.ponerInfinito(matriz, i, j)
   return MatrizOperaciones.encontrarMenorFila(matrizNueva, i) + MatrizOperaciones.encontrarMenorColumna(matrizNueva, j)
 }
-
-
-module.exports = obtenerThetaMayor

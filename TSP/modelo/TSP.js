@@ -1,12 +1,11 @@
-const MatrizOperaciones = require("./MatrizOperaciones")
-const matprint = require("./matprint")
-const Nodo = require("./Nodo")
-const reducirMatriz = require("./reducirMatriz")
-const obtenerThetaMayor = require("./obtenerThetaMayor")
-const RutaOperaciones = require("./RutaOperaciones")
-const IteradorArbolCamino = require("./IteradorArbolCamino")
+import { MatrizOperaciones } from "../modelo/MatrizOperaciones"
+import { Nodo } from "../modelo/Nodo"
+import { reducirMatriz } from "../modelo/reducirMatriz"
+import { obtenerThetaMayor } from "../modelo/obtenerThetaMayor"
+import { RutaOperaciones } from "../modelo/RutaOperaciones"
+import { IteradorArbolCamino } from "../modelo/IteradorArbolCamino"
 
-class TSP {
+export class TSP {
   #arbol
   #matrizAdyacencia
   #matrizAdyacenciaOriginal
@@ -149,5 +148,3 @@ class TSP {
     }
   }
 }
-
-module.exports = TSP

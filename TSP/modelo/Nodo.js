@@ -1,4 +1,4 @@
-class Nodo {
+export class Nodo {
   #limiteInferior = 0
   #parejasConsideradas = []
   #parejasNoConsideradas = []
@@ -31,5 +31,3 @@ class Nodo {
     this.#limiteInferior = limite
   }
 }
-
-module.exports = Nodo

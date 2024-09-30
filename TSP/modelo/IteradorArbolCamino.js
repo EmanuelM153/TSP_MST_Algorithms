@@ -1,4 +1,4 @@
-class IteradorArbolCamino {
+export class IteradorArbolCamino {
   #arbol
   #camino
 
@@ -43,5 +43,3 @@ class IteradorArbolCamino {
     return this.#arbol.getNodo(posicion)
   }
 }
-
-module.exports = IteradorArbolCamino

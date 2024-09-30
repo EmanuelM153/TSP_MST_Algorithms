@@ -1,6 +1,6 @@
-const IteradorArbolDerecha = require("./IteradorArbolDerecha")
+import { IteradorArbolDerecha } from "../modelo/IteradorArbolDerecha"
 
-class ArbolBinario {
+export class ArbolBinario {
   #arbol = []
 
   constructor(nodo) {
@@ -63,5 +63,3 @@ class ArbolBinario {
     return this.#arbol[2 * indice + 1]
   }
 }
-
-module.exports = ArbolBinario

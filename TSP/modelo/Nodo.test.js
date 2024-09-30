@@ -1,6 +1,6 @@
-const Nodo = require("./Nodo")
+import { Nodo } from "./Nodo"
 
-nodo = new Nodo()
+const nodo = new Nodo()
 
 // prueba constructor
 test("El constructor funciona", () => {

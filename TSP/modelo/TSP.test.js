@@ -1,7 +1,7 @@
-const TSP = require("./TSP")
-const ArbolBinario = require("./ArbolBinario")
-const Nodo = require("./Nodo")
-const RutaOperaciones = require("./RutaOperaciones")
+import { TSP } from "./TSP"
+import { ArbolBinario } from "./ArbolBinario"
+import { Nodo } from "./Nodo"
+import { RutaOperaciones } from "./RutaOperaciones"
 
 const arbol = new ArbolBinario(new Nodo(0, [], []))
 const iterador = arbol.crearIteradorDerecha()
