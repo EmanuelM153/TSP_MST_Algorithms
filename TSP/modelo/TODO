@@ -1,0 +1,2 @@
+- hacer que las funciones de MatrizOperaciones reciban un arreglo con la posicion en vez de la coordenadas por separado
+- refactorizar
