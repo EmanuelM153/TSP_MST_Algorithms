@@ -1,6 +1,6 @@
-const IteradorArbolCamino = require("./IteradorArbolCamino")
-const ArbolBinario = require("./ArbolBinario")
-const Nodo = require("./Nodo")
+import { IteradorArbolCamino } from "./IteradorArbolCamino"
+import { ArbolBinario } from "./ArbolBinario"
+import { Nodo } from "./Nodo"
 
 const arbol = new ArbolBinario(new Nodo(5))
 arbol.agregarNodoDerecha(0, new Nodo(-2))

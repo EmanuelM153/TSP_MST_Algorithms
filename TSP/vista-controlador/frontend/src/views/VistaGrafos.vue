@@ -81,7 +81,6 @@ function moverMouse(event: any) {
 
 function mostrarMejorCamino() {
     const nodos = net.body.data.nodes.get();
-    console.log(nodos)
     const aristas = net.body.data.edges.get();
     const mapa = crearMapaNodos(nodos)
     const matrizAdyacencia = crearMatrizAdyacencia(mapa, aristas, nodos.length)

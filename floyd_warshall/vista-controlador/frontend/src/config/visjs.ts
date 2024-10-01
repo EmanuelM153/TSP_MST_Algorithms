@@ -17,9 +17,8 @@ const locales = {
     editClusterError: "Los clústeres no se pueden editar."
   },
 };
-export const options = {
-  autoResize: true,
-  locale: "en",
+
+export const options = { autoResize: true, locale: "en",
   locales: locales,
   height: "100%",
   nodes: {
@@ -30,9 +29,18 @@ export const options = {
     scaling: { label: true },
     shadow: true,
   },
+  layout: {
+    hierarchical: false
+  },
+  physics: {
+    solver: "forceAtlas2Based",
+    stabilization: { iterations: 150 }
+  },
   edges: {
     color: "#e879f9",
-    font: "10px arial black",
+    font: { size: 10, face: "arial", vadjust: -5 }, // Adjusting label position closer to the edge
+    smooth: { enabled: true, type: "continuous" }, // Adjust edge type to see if labels align better
+    arrows: { to: { enabled: true, scaleFactor: 0.5 } }, // Optional: if arrows needed for directionality
   },
   interaction: {
     hover: true,

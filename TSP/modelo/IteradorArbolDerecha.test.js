@@ -1,8 +1,8 @@
-const ArbolBinario = require("./ArbolBinario")
-const Nodo = require("./Nodo")
+import { ArbolBinario } from "./ArbolBinario"
+import { Nodo } from "./Nodo"
 
-arbol = new ArbolBinario(new Nodo())
-iterador = arbol.crearIteradorDerecha()
+const arbol = new ArbolBinario(new Nodo())
+const iterador = arbol.crearIteradorDerecha()
 
 test("Inicialmente no hay hijo derecha y por lo tanto siguiente", () => {
   expect(iterador.tieneSiguiente()).toBe(false)

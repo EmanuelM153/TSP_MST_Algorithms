@@ -10,7 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "vista": "file:./TSP/vista/frontend",
+    "vistaTSP": "file:./TSP/vista/frontend",
+    "vistaF-W": "file:./floyd_warshall//vista/frontend",
     "jest": "^29.7.0"
   }
 }

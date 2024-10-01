@@ -14,7 +14,7 @@ const matrizAdyancencia = [
   [23, 5, 5, 9, 5, Infinity]
 ]
 
-tsp = new TSP(matrizAdyancencia, iterador)
+const tsp = new TSP(matrizAdyancencia, iterador)
 
 test("La reduccion funciona", () => {
   const nuevaMatriz = [
@@ -33,7 +33,7 @@ test("La reduccion funciona", () => {
 // agregarSubconjuntoExclusion pruebas
 test("agregar al subconjunto exclusion funciona", () => {
   tsp.agregarSubconjuntoExclusion()
-  nodo = arbol.getNodo(1)
+  const nodo = arbol.getNodo(1)
   expect(nodo.getLimiteInferior()).toBe(58)
   expect(nodo.getParejasNoConsideradas()).toEqual([[0, 3]])
 })
@@ -55,7 +55,7 @@ test("Obtener los caminos posibles de la matriz funciona", () => {
 // agregarSubconjuntoInclusion pruebas
 test("agregar al subconjunto inclusion funciona", () => {
   tsp.agregarSubconjuntoInclusion()
-  nodo = arbol.getNodo(2)
+  const nodo = arbol.getNodo(2)
   expect(nodo.getLimiteInferior()).toBe(49)
   expect(nodo.getParejasConsideradas()).toEqual([[0, 3]])
   expect(tsp.getRuta()).toEqual([[0, 3]])
@@ -66,7 +66,7 @@ test("agregar al subconjunto inclusion funciona", () => {
 // otra prueba
 test("prueba de otro nodo en el arbol", () => {
   tsp.agregarSubconjuntoExclusion()
-  nodo = arbol.getNodo(5)
+  var nodo = arbol.getNodo(5)
   expect(nodo.getLimiteInferior()).toBe(65)
   expect(nodo.getParejasNoConsideradas()).toEqual([[1, 0]])
 
@@ -90,7 +90,7 @@ test("agregar el nodo faltante funciona", () => {
   tsp.agregarSubconjuntoExclusion()
 
   tsp.agregarFaltante()
-  nodo = arbol.getNodo(iterador.getPosicion())
+  const nodo = arbol.getNodo(iterador.getPosicion())
 
   expect(nodo.getLimiteInferior()).toBe(63)
   expect(nodo.getParejasConsideradas()).toEqual([[3, 2], [5, 1]])

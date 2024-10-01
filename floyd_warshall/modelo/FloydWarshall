@@ -1,0 +1,58 @@
+export class FloydWarshall {
+  #grafo
+  #distancias
+  #siguientes
+
+  constructor(grafo) {
+    this.#grafo = grafo
+    this.#distancias = []
+    this.#siguientes = []
+  }
+
+  getGrafo() {
+    return this.#grafo
+  }
+
+  getDistancias() {
+    return this.#distancias
+  }
+
+  inicializarMatrices() {
+    const numNodos = this.#grafo.obtenerNumeroNodos()
+    const matriz = this.#grafo.obtenerMatrizAdyacencia()
+
+    this.#distancias = Array.from({ length: numNodos }, (_, i) =>
+      Array.from({ length: numNodos }, (_, j) => (i === j ? 0 : matriz[i][j]))
+    )
+
+    this.#siguientes = Array.from({ length: numNodos }, (_, i) =>
+      Array.from({ length: numNodos }, (_, j) => (matriz[i][j] !== Infinity ? j : null))
+    )
+  }
+
+  ejecutar() {
+    const numNodos = this.#grafo.obtenerNumeroNodos()
+
+    for (let k = 0; k < numNodos; k++) {
+      for (let i = 0; i < numNodos; i++) {
+        for (let j = 0; j < numNodos; j++) {
+          if (this.#distancias[i][k] + this.#distancias[k][j] < this.#distancias[i][j]) {
+            this.#distancias[i][j] = this.#distancias[i][k] + this.#distancias[k][j]
+            this.#siguientes[i][j] = this.#siguientes[i][k]
+          }
+        }
+      }
+    }
+  }
+
+  obtenerCamino(i, j) {
+    if (this.#siguientes[i][j] === null) return []
+
+    const camino = [i]
+    while (i !== j) {
+      i = this.#siguientes[i][j]
+      camino.push(i)
+    }
+    return camino
+  }
+}

@@ -31,6 +31,7 @@
             </select>
         </template>
     </popUp_modificar>
+    <button @click="mostrarRutasMinimas" class="boton mb-3 ml-2">Mostrar rutas mínimas</button>
     <div @mousemove="moverMouse" class="mx-0 md:mx-2">
         <div ref="mynetwork" class="w-full" style="height: 40rem"></div>
     </div>
@@ -38,11 +39,13 @@
 
 <script lang="ts" setup>
 import popUp_modificar from "../components/popUp_modificar.vue"
-import { verificarNombre } from "@/utils/visjs";
+import { verificarNombre, crearMapaNodos, crearMatrizAdyacencia, formatearRutasMinimas } from "@/utils/visjs";
 import { options } from "../config/visjs"
 import { ref, onMounted } from "vue";
 import { Network } from "vis-network/standalone";
+import { MainFloydWarshall } from "../../../../modelo/main"
 
+let net
 const nombres: Array<String> = []
 
 const popUpNodo = ref({
@@ -74,6 +77,20 @@ var _callback: Function
 function moverMouse(event: any) {
     mousePosX.value = event.clientX;
     mousePosY.value = event.clientY;
+}
+
+function mostrarRutasMinimas() {
+    const nodos = net.body.data.nodes.get();
+    const aristas = net.body.data.edges.get();
+    const mapa = crearMapaNodos(nodos)
+    const matrizAdyacencia = crearMatrizAdyacencia(mapa, aristas, nodos.length)
+    const floydWarshall = MainFloydWarshall.encontrarRutasMinimas(matrizAdyacencia)
+    const rutasFormateadas = formatearRutasMinimas(nodos, floydWarshall)
+    const mensaje = rutasFormateadas.reduce((acc, current) => acc + "\n" + current, "")
+    if (mensaje != "")
+        alert(mensaje)
+    else
+        alert("Insuficiente informacion")
 }
 
 function guardarNodo() {
@@ -142,7 +159,7 @@ onMounted(() => {
             // }
         }
 
-        const net = new Network(mynetwork.value, {}, options);
+        net = new Network(mynetwork.value, {}, options);
         net.once("stabilized", function () {
             var scaleOption = { scale: 2 };
             net.moveTo(scaleOption);
